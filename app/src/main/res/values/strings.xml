@@ -15,6 +15,6 @@
     <string name="search">Search</string>
     <string name="product">Товары</string>
     <string name="sales">Продажи</string>
-    <string name="supply">Поступления</string>
+    <string name="supply">Приходы</string>
 
 </resources>

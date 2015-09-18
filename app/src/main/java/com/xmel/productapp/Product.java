@@ -6,16 +6,17 @@ import java.util.UUID;
  * Created by Admin on 07.09.2015.
  */
 public class Product {
-    private UUID mId;
+    private int mId;
+    private static int lastID=0;
     private String mName;
     private float mPrice;
     private long mCode;
 
     public Product() {
-        mId = UUID.randomUUID();
+        mId = lastID++;
     }
 
-    public UUID getId() {
+    public int getId() {
         return mId;
     }
 

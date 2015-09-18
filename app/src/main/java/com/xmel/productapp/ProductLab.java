@@ -37,9 +37,9 @@ public class ProductLab {
         return mProducts;
     }
 
-    public Product getProduct(UUID id) {
+    public Product getProduct(int id) {
         for (Product p : mProducts) {
-            if (p.getId().equals(id)) {
+            if (p.getId()== id) {
                 return p;
             }
         }

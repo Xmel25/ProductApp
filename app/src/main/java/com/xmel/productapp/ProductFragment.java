@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import java.util.UUID;
+
 /**
  * Created by Admin on 07.09.2015.
  */
@@ -18,16 +20,28 @@ public class ProductFragment extends Fragment {
 
     private Product mProduct;
 
+    public static final String EXTRA_ID = "id";
+
+    private int id;
     private EditText mName;
     private EditText mPrice;
     private EditText mCode;
 
+    public static ProductFragment getInstance(int id) {
+        ProductFragment productFragment = new ProductFragment();
+        Bundle args = new Bundle();
+        args.putSerializable(EXTRA_ID, id);
+        productFragment.setArguments(args);
 
+        return productFragment;
+
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mProduct = new Product();
+        id = getArguments().getInt(EXTRA_ID);
     }
 
     @Nullable
@@ -38,6 +52,10 @@ public class ProductFragment extends Fragment {
         mName = (EditText) v.findViewById(R.id.product_name);
         mPrice = (EditText) v.findViewById(R.id.product_price);
         mCode = (EditText) v.findViewById(R.id.product_code);
+        mName.setText(ProductLab.get(getActivity()).getProduct(id).getName());
+        mPrice.setText(ProductLab.get(getActivity()).getProduct(id).getPrice()+"");
+        mCode.setText(ProductLab.get(getActivity()).getProduct(id).getCode()+"");
+
 
         mName.addTextChangedListener(new TextWatcher() {
             @Override

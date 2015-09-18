@@ -19,7 +19,7 @@ public class TabsPageFragmentAdapter extends FragmentPagerAdapter {
         tabs = new String[] {
                 "Товары",
                 "Продажи",
-                "Поступления"
+                "Приходы"
         };
     }
 
