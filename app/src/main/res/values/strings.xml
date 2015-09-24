@@ -17,4 +17,8 @@
     <string name="sales">Продажи</string>
     <string name="supply">Приходы</string>
 
+    <string name="view_navigation_open">Open</string>
+    <string name="view_navigation_close">Close</string>
+
+
 </resources>

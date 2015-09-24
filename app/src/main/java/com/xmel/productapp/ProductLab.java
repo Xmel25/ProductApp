@@ -26,6 +26,12 @@ public class ProductLab {
         }
     }
 
+    public Product add() {
+        Product product = new Product();
+        mProducts.add(product);
+        return product;
+    }
+
     public static ProductLab get(Context context) {
         if (sProductLab == null) {
             sProductLab = new ProductLab(context.getApplicationContext());
